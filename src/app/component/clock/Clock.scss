@@ -1,0 +1,81 @@
+.clock {
+	width: 200px;
+	height: 200px;
+	border: 5px solid black;
+	border-radius: 100px;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		right: 50%;
+		bottom: 50%;
+		width: 10px;
+		height: 10px;
+		border-radius: 5px;
+		background-color: red;
+		transform: translate(50%, 50%);
+	}
+
+	.clockHandle {
+		&__hrs {
+			right: 50%;
+			bottom: 50%;
+			width: 5px;
+			height: 80px;
+			background-color: black;
+			position: absolute;
+			transform: translate(50%, 0) rotate(30deg);
+			transform-origin: bottom center;
+			border-radius: 5px;
+		}
+
+		&__min {
+			right: 50%;
+			bottom: 50%;
+			width: 5px;
+			height: 90px;
+			background-color: black;
+			position: absolute;
+			transform: translate(50%, 0) rotate(60deg);
+			transform-origin: bottom center;
+			border-radius: 5px;
+		}
+
+		&__sec {
+			right: 50%;
+			bottom: 50%;
+			width: 2px;
+			height: 80px;
+			background-color: black;
+			position: absolute;
+			transform: translate(50%, 0) rotate(90deg);
+			transform-origin: bottom center;
+			border-radius: 5px;
+		}
+	}
+
+	@for $i from 1 through 12 {
+		$degree: $i * 30deg;
+
+		.clockNumber-#{$i} {
+			right: 50%;
+			bottom: 50%;
+			width: 5px;
+			height: 92px;
+			// background-color: yellow;
+			position: absolute;
+			transform: translate(50%, 0) rotate($degree);
+			transform-origin: bottom center;
+			border-radius: 5px;
+			text-align: center;
+
+			.text {
+				transform: rotate(-$degree);
+				text-align: center;
+				color: blue;
+			}
+		}
+	}
+
+}
