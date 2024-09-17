@@ -25,9 +25,16 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
     box-shadow: 0 0 1px #007bff;
   }
 
+ 
+  &:checked,&:active + span:before {
+    background-color: #07db19;
+    width: 3em;
+  }
+  
+
   &:checked + span:before {
     transform: translateX(1.4em);
-    background-color: #fff;
+    background-color: #0703f0;
   }
 `;
 
@@ -51,7 +58,7 @@ const Slider = styled.span`
     border-radius: 20px;
     left: 0.27em;
     bottom: 0.25em;
-    background-color: #adb5bd;
+    background-color: #dd1919;
     transition: 0.4s;
   }
 `;
